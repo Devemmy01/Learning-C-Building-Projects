@@ -1,42 +1,58 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+// #include <stdlib.h>
+// #include <time.h>
 
-int main(){
-    const int MIN = 1;
-    const int MAX = 50;
-    int guess;
-    int guesses;
-    int answer;
+// int main(){
+//     const int MIN = 1;
+//     const int MAX = 50;
+//     int guess;
+//     int guesses;
+//     int answer;
 
-    // uses the current time as seed to generate random numbers
-    srand(time(0));
+//     // uses the current time as seed to generate random numbers
+//     srand(time(0));
 
-    // This will generate a random number between MIN & MAX
-    answer = (rand() % MAX) + MIN;
+//     // This will generate a random number between MIN & MAX
+//     answer = (rand() % MAX) + MIN;
 
-    printf("%d", answer); 
+//     printf("%d", answer); 
 
-    do
-    {
-        printf("Enter a guesss: ");
-        scanf("%d", &guess);
+//     do
+//     {
+//         printf("Enter a guesss: ");
+//         scanf("%d", &guess);
 
-        if (guess > answer){
-            printf("Too high!\n");
-        } else if(guess < answer){
-            printf("Too low!\n");
-        } else{
-            printf("CORRECT!\n");
-        }
-        guesses++;
+//         if (guess > answer){
+//             printf("Too high!\n");
+//         } else if(guess < answer){
+//             printf("Too low!\n");
+//         } else{
+//             printf("CORRECT!\n");
+//         }
+//         guesses++;
 
-    } while (guess != answer);
+//     } while (guess != answer);
     
-    printf("======================");
-    printf("answer: %d\n", answer);
-    printf("guesses: %d\n", guesses);
-    printf("======================");
+//     printf("======================");
+//     printf("answer: %d\n", answer);
+//     printf("guesses: %d\n", guesses);
+//     printf("======================");
 
-    return 0;
+//     return 0;
+// }
+
+void print(int nb)
+{
+    printf("%d", nb);
+    -- nb;
+    if (nb > 0) 
+    {
+        print(nb);
+    }
+}
+
+int main(void)
+{
+    print(4);
+    return (0);
 }
